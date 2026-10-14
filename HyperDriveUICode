@@ -1,1 +1,362 @@
+--[[MBEE_HEADER__DO_NOT_EDIT]]
+if game then
+	PilotLua = require(game.ReplicatedStorage.PilotLua)
+	Beep, FileSystem, GetCPUTime, GetPart, GetPartFromPort, GetParts, GetPartsFromPort, GetPort, GetPorts, JSONDecode, JSONEncode, Microcontroller, Network, RawFileSystem, SandboxID, SandboxRunID, TriggerPort, logError, pilot = PilotLua()
+end
+-- Version 1768391500
+-- Automatically generated header, provides typechecking. Disable "Microcontroller Typechecking" in advanced settings to remove.
+--[[MBEE_HEADER__DO_NOT_EDIT]]
 
+-- Network:GetPart() is the modern/safer equivalent of GetPart()
+local Screen = Network:GetPart("ARController") or GetPart("ARController")
+local HyperDrive = Network:GetPart("HyperDrive") or GetPart("HyperDrive")
+
+Screen:ClearElements()
+
+local frame = Screen:CreateElement("Frame", { BackgroundColor3 = Color3.fromHex("#7F7A82"), BorderColor3 = Color3.fromHex("#000000"), BorderSizePixel = 0, Position = UDim2.fromScale(0.718, 0.415), Size = UDim2.fromScale(0.15, 0.275) })
+local frame1 = Screen:CreateElement("Frame", { BackgroundColor3 = Color3.fromHex("#969099"), BorderColor3 = Color3.fromHex("#000000"), BorderSizePixel = 0, Size = UDim2.fromScale(1, 0.4) })
+local powerRequired = Screen:CreateElement("TextLabel", { Text = "energy required", TextColor3 = Color3.fromHex("#FFFFFF"), TextScaled = true, TextSize = 30, TextStrokeTransparency = 0.5, TextWrapped = true, AnchorPoint = Vector2.new(0, 1), BackgroundColor3 = Color3.fromHex("#FFFFFF"), BackgroundTransparency = 1, BorderColor3 = Color3.fromHex("#1B2A35"), Position = UDim2.fromScale(0.38, 1), Selectable = true, Size = UDim2.fromScale(0.287, 0.4), ZIndex = 3 })
+local textButton = Screen:CreateElement("TextButton", { Text = 0, TextColor3 = Color3.fromHex("#FFFFFF"), TextScaled = true, TextSize = 14, TextWrapped = true, BackgroundColor3 = Color3.fromHex("#17179E"), BorderColor3 = Color3.fromHex("#000000"), BorderSizePixel = 0, Position = UDim2.fromScale(0.02, 0.05), Size = UDim2.fromScale(0.24, 0.55) })
+local textButton1 = Screen:CreateElement("TextButton", { Text = 0, TextColor3 = Color3.fromHex("#FFFFFF"), TextScaled = true, TextSize = 14, TextWrapped = true, BackgroundColor3 = Color3.fromHex("#17179E"), BorderColor3 = Color3.fromHex("#000000"), BorderSizePixel = 0, Position = UDim2.fromScale(0.26, 0.05), Size = UDim2.fromScale(0.24, 0.55) })
+local textButton2 = Screen:CreateElement("TextButton", { Text = 0, TextColor3 = Color3.fromHex("#FFFFFF"), TextScaled = true, TextSize = 14, TextWrapped = true, BackgroundColor3 = Color3.fromHex("#3056BA"), BorderColor3 = Color3.fromHex("#000000"), BorderSizePixel = 0, Position = UDim2.fromScale(0.52, 0.05), Size = UDim2.fromScale(0.23, 0.55) })
+local textButton3 = Screen:CreateElement("TextButton", { Text = 0, TextColor3 = Color3.fromHex("#FFFFFF"), TextScaled = true, TextSize = 14, TextWrapped = true, BackgroundColor3 = Color3.fromHex("#3056BA"), BorderColor3 = Color3.fromHex("#000000"), BorderSizePixel = 0, Position = UDim2.fromScale(0.75, 0.05), Size = UDim2.fromScale(0.23, 0.55) })
+local powerRequired1 = Screen:CreateElement("TextLabel", { Text = 0, TextColor3 = Color3.fromHex("#00FF00"), TextScaled = true, TextSize = 30, TextStrokeTransparency = 0.5, TextWrapped = true, AnchorPoint = Vector2.new(0, 1), BackgroundColor3 = Color3.fromHex("#A39DA7"), BorderColor3 = Color3.fromHex("#1B2A35"), BorderSizePixel = 0, Position = UDim2.fromScale(0.02, 1), Selectable = true, Size = UDim2.fromScale(0.35, 0.35), ZIndex = 3 })
+local textButton4 = Screen:CreateElement("TextButton", { Text = "TRUE", TextColor3 = Color3.fromHex("#FFFFFF"), TextScaled = true, TextSize = 14, TextWrapped = true, BackgroundColor3 = Color3.fromHex("#69666C"), BorderColor3 = Color3.fromHex("#000000"), BorderSizePixel = 0, Position = UDim2.fromScale(0.697, 0.63), Size = UDim2.fromScale(0.273, 0.175) })
+local textButton5 = Screen:CreateElement("TextButton", { Text = "FALSE", TextColor3 = Color3.fromHex("#FFFFFF"), TextScaled = true, TextSize = 14, TextWrapped = true, BackgroundColor3 = Color3.fromHex("#00FF00"), BorderColor3 = Color3.fromHex("#000000"), BorderSizePixel = 0, Position = UDim2.fromScale(0.697, 0.8), Size = UDim2.fromScale(0.273, 0.175) })
+local frame2 = Screen:CreateElement("Frame", { BackgroundColor3 = Color3.fromHex("#6A666D"), BorderColor3 = Color3.fromHex("#000000"), BorderSizePixel = 0, Position = UDim2.fromScale(0.02, 0.425), Size = UDim2.fromScale(0.95, 0.55) })
+local textButton6 = Screen:CreateElement("TextButton", { Text = 7, TextColor3 = Color3.fromHex("#FFFFFF"), TextScaled = true, TextSize = 14, TextWrapped = true, BackgroundColor3 = Color3.fromHex("#3866DA"), BorderColor3 = Color3.fromHex("#000000"), BorderSizePixel = 0, Size = UDim2.fromScale(0.15, 0.2) })
+local textButton7 = Screen:CreateElement("TextButton", { Text = 4, TextColor3 = Color3.fromHex("#FFFFFF"), TextScaled = true, TextSize = 14, TextWrapped = true, BackgroundColor3 = Color3.fromHex("#3866DA"), BorderColor3 = Color3.fromHex("#000000"), BorderSizePixel = 0, Position = UDim2.fromScale(0, 0.23), Size = UDim2.fromScale(0.15, 0.2) })
+local textButton8 = Screen:CreateElement("TextButton", { Text = 1, TextColor3 = Color3.fromHex("#FFFFFF"), TextScaled = true, TextSize = 14, TextWrapped = true, BackgroundColor3 = Color3.fromHex("#3866DA"), BorderColor3 = Color3.fromHex("#000000"), BorderSizePixel = 0, Position = UDim2.fromScale(0, 0.46), Size = UDim2.fromScale(0.15, 0.2) })
+local textButton9 = Screen:CreateElement("TextButton", { Text = 0, TextColor3 = Color3.fromHex("#FFFFFF"), TextScaled = true, TextSize = 14, TextWrapped = true, BackgroundColor3 = Color3.fromHex("#3866DA"), BorderColor3 = Color3.fromHex("#000000"), BorderSizePixel = 0, Position = UDim2.fromScale(0, 0.69), Size = UDim2.fromScale(0.15, 0.2) })
+local textButton10 = Screen:CreateElement("TextButton", { Text = 8, TextColor3 = Color3.fromHex("#FFFFFF"), TextScaled = true, TextSize = 14, TextWrapped = true, BackgroundColor3 = Color3.fromHex("#3866DA"), BorderColor3 = Color3.fromHex("#000000"), BorderSizePixel = 0, Position = UDim2.fromScale(0.179, 0), Size = UDim2.fromScale(0.15, 0.2) })
+local textButton11 = Screen:CreateElement("TextButton", { Text = 5, TextColor3 = Color3.fromHex("#FFFFFF"), TextScaled = true, TextSize = 14, TextWrapped = true, BackgroundColor3 = Color3.fromHex("#3866DA"), BorderColor3 = Color3.fromHex("#000000"), BorderSizePixel = 0, Position = UDim2.fromScale(0.179, 0.23), Size = UDim2.fromScale(0.15, 0.2) })
+local textButton12 = Screen:CreateElement("TextButton", { Text = 2, TextColor3 = Color3.fromHex("#FFFFFF"), TextScaled = true, TextSize = 14, TextWrapped = true, BackgroundColor3 = Color3.fromHex("#3866DA"), BorderColor3 = Color3.fromHex("#000000"), BorderSizePixel = 0, Position = UDim2.fromScale(0.179, 0.46), Size = UDim2.fromScale(0.15, 0.2) })
+local textButton13 = Screen:CreateElement("TextButton", { Text = 9, TextColor3 = Color3.fromHex("#FFFFFF"), TextScaled = true, TextSize = 14, TextWrapped = true, BackgroundColor3 = Color3.fromHex("#3866DA"), BorderColor3 = Color3.fromHex("#000000"), BorderSizePixel = 0, Position = UDim2.fromScale(0.352, 0), Size = UDim2.fromScale(0.15, 0.2) })
+local textButton14 = Screen:CreateElement("TextButton", { Text = 6, TextColor3 = Color3.fromHex("#FFFFFF"), TextScaled = true, TextSize = 14, TextWrapped = true, BackgroundColor3 = Color3.fromHex("#3866DA"), BorderColor3 = Color3.fromHex("#000000"), BorderSizePixel = 0, Position = UDim2.fromScale(0.352, 0.23), Size = UDim2.fromScale(0.15, 0.2) })
+local textButton15 = Screen:CreateElement("TextButton", { Text = 3, TextColor3 = Color3.fromHex("#FFFFFF"), TextScaled = true, TextSize = 14, TextWrapped = true, BackgroundColor3 = Color3.fromHex("#3866DA"), BorderColor3 = Color3.fromHex("#000000"), BorderSizePixel = 0, Position = UDim2.fromScale(0.352, 0.46), Size = UDim2.fromScale(0.15, 0.2) })
+local textButton16 = Screen:CreateElement("TextButton", { Text = "-", TextColor3 = Color3.fromHex("#FFFFFF"), TextScaled = true, TextSize = 14, TextWrapped = true, BackgroundColor3 = Color3.fromHex("#3866DA"), BorderColor3 = Color3.fromHex("#000000"), BorderSizePixel = 0, Position = UDim2.fromScale(0.179, 0.69), Size = UDim2.fromScale(0.15, 0.2) })
+local textButton17 = Screen:CreateElement("TextButton", { Text = "<", TextColor3 = Color3.fromHex("#FFFFFF"), TextScaled = true, TextSize = 14, TextWrapped = true, BackgroundColor3 = Color3.fromHex("#FF0000"), BorderColor3 = Color3.fromHex("#000000"), BorderSizePixel = 0, Position = UDim2.fromScale(0.352, 0.69), Size = UDim2.fromScale(0.15, 0.2) })
+local textButton18 = Screen:CreateElement("TextButton", { Text = "WARP", TextColor3 = Color3.fromHex("#FFFFFF"), TextScaled = true, TextSize = 14, TextWrapped = true, BackgroundColor3 = Color3.fromHex("#596AFF"), BorderColor3 = Color3.fromHex("#000000"), BorderSizePixel = 0, Position = UDim2.fromScale(0.531, -0.00389), Size = UDim2.fromScale(0.325, 0.2) })
+local textButton19 = Screen:CreateElement("TextButton", { Text = "ENTER", TextColor3 = Color3.fromHex("#FFFFFF"), TextScaled = true, TextSize = 14, TextWrapped = true, BackgroundColor3 = Color3.fromHex("#3866DA"), BorderColor3 = Color3.fromHex("#000000"), BorderSizePixel = 0, Position = UDim2.fromScale(0.531, 0.227), Size = UDim2.fromScale(0.2, 0.425) })
+local textButton20 = Screen:CreateElement("TextButton", { Text = "DEL ALL", TextColor3 = Color3.fromHex("#FFFFFF"), TextScaled = true, TextSize = 14, TextWrapped = true, BackgroundColor3 = Color3.fromHex("#FF0000"), BorderColor3 = Color3.fromHex("#000000"), BorderSizePixel = 0, Position = UDim2.fromScale(0.531, 0.69), Size = UDim2.fromScale(0.325, 0.2) })
+
+frame:AddChild(frame1); frame1:AddChild(powerRequired); frame1:AddChild(textButton); frame1:AddChild(textButton1); frame1:AddChild(textButton2); frame1:AddChild(textButton3); frame1:AddChild(powerRequired1); frame1:AddChild(textButton4); frame1:AddChild(textButton5); 
+frame:AddChild(frame2); frame2:AddChild(textButton6); frame2:AddChild(textButton7); frame2:AddChild(textButton8); frame2:AddChild(textButton9); frame2:AddChild(textButton10); frame2:AddChild(textButton11); frame2:AddChild(textButton12); frame2:AddChild(textButton13); frame2:AddChild(textButton14); frame2:AddChild(textButton15); frame2:AddChild(textButton16); frame2:AddChild(textButton17); frame2:AddChild(textButton18); frame2:AddChild(textButton19); frame2:AddChild(textButton20)
+
+-- Core Control Variables
+local coordButtons = {textButton, textButton1, textButton2, textButton3}
+local currentSelection = 1
+local newInput = true
+local isNegativePending = false
+
+local inPlanet = false
+local fields = {"0", "0", "0", "0"}
+
+-- Helper function to preserve native "-0" natively (1/0 == inf, 1/-0 == -inf in Luau)
+local function formatCoord(num)
+	num = num or 0
+	if num == 0 and (1 / num) < 0 then
+		return "-0"
+	end
+	return tostring(math.floor(num))
+end
+
+-- NEW: Read initial coordinates from the HyperDrive when the script boots up
+if HyperDrive and HyperDrive.Coordinates then
+	local currentCoords = HyperDrive.Coordinates:ToArray()
+	fields = {
+		formatCoord(currentCoords[1]),
+		formatCoord(currentCoords[2]),
+		formatCoord(currentCoords[3]),
+		formatCoord(currentCoords[4])
+	}
+	inPlanet = (currentCoords[5] == true)
+end
+
+-- Holds the actual numerical power required internally to prevent tag evaluation issues (`_`)
+local currentRequiredPower = 0
+
+-- Helper Function to safely convert strings with commas (like "3,000") to numbers 
+local function parseNumber(val)
+	if not val then return 0 end
+	if type(val) == "number" then return val end
+	local strClean = string.gsub(tostring(val), "[,%s]", "") -- Strip commas & spaces
+	return tonumber(strClean) or 0
+end
+
+-- Setting UI properties via pure numbers completely bypasses Roblox text-filtering ("_"). 
+local function safeSetText(ui, newText)
+	local str = tostring(newText)
+	if ui.Text ~= str then
+		ui.Text = newText -- Passes the pure numerical type if provided, preventing the temporary tag `_`
+	end
+end
+
+-- Function to apply strictly parsed strings to HyperDrive coordinates immediately
+local function applyHyperDrive()
+	-- Sub-helper: Replaces empty or incomplete hyphen fields with '0' for the HyperDrive 
+	local function safeCoord(val)
+		if val == "-" or val == "" then return "0" end
+		return tostring(val)
+	end
+
+	local coordStr = string.format("%s, %s, %s, %s, %s", 
+		safeCoord(fields[1]), safeCoord(fields[2]), safeCoord(fields[3]), safeCoord(fields[4]), tostring(inPlanet))
+
+	if HyperDrive then
+		HyperDrive.Coordinates = coordStr
+
+		-- Spawned task allowing proper calculation delay
+		task.spawn(function()
+			task.wait(0.1)
+			local reqPower = HyperDrive:GetRequiredPower()
+			if reqPower then
+				currentRequiredPower = parseNumber(reqPower)
+				safeSetText(powerRequired1, currentRequiredPower)
+			end
+		end)
+	end
+end
+
+local function updateFieldsUI()
+	for i, btn in ipairs(coordButtons) do
+		local textVal = fields[i]
+		local num = tonumber(textVal)
+
+		-- Bypass tagging using the pure number, but EXPLICITLY use string for "-0" and "-" to maintain display sign
+		if textVal == "-" or textVal == "-0" or textVal == "" then
+			safeSetText(btn, textVal)
+		elseif num then
+			safeSetText(btn, num)
+		else
+			safeSetText(btn, 0)
+		end
+
+		if i == currentSelection then
+			btn.TextColor3 = Color3.fromHex("#FFFF00")
+		else
+			btn.TextColor3 = Color3.fromHex("#FFFFFF")
+		end
+	end
+end
+
+local function updateInPlanetUI()
+	if inPlanet then
+		textButton4.BackgroundColor3 = Color3.fromHex("#00FF00")
+		textButton5.BackgroundColor3 = Color3.fromHex("#69666C")
+	else
+		textButton4.BackgroundColor3 = Color3.fromHex("#69666C")
+		textButton5.BackgroundColor3 = Color3.fromHex("#00FF00")
+	end
+end
+
+-- Syncs our UI fields with whatever is currently written on the HyperDrive itself
+local function syncFromHyperDrive()
+	if HyperDrive and HyperDrive.Coordinates then
+		local currentCoords = HyperDrive.Coordinates:ToArray()
+		fields = {
+			formatCoord(currentCoords[1]),
+			formatCoord(currentCoords[2]),
+			formatCoord(currentCoords[3]),
+			formatCoord(currentCoords[4])
+		}
+		inPlanet = (currentCoords[5] == true)
+
+		updateFieldsUI()
+		updateInPlanetUI()
+
+		-- Recalculate the required power reading 
+		task.spawn(function()
+			task.wait(0.1)
+			local reqPower = HyperDrive:GetRequiredPower()
+			if reqPower then
+				currentRequiredPower = parseNumber(reqPower)
+				safeSetText(powerRequired1, currentRequiredPower)
+			end
+		end)
+	end
+end
+
+-- Bind the sync event so the UI updates if someone hammers the HyperDrive manually
+if HyperDrive then
+	HyperDrive.Configured:Connect(syncFromHyperDrive)
+end
+
+-- Dedicated anti-tagging background loop & dynamic power tracking
+task.spawn(function()
+	while true do
+		-- Power Check logic reading from internal tracker, immune to UI string anomalies
+		local req = currentRequiredPower
+		local avail = 0
+
+		-- Dynamically fetch the instrument continuously. If you re-place or repair it, 
+		-- it won't break your script!
+		local Instrument = Network:GetPart("Instrument") or GetPart("Instrument")
+		if Instrument then
+			-- Fetch and safely strip out formatting (e.g. converting "3,000" -> 3000)
+			avail = parseNumber(Instrument:GetReading("Power"))
+		end
+
+		-- Apply colors: pure red if required exceeds available, else pure green
+		if req > avail then
+			powerRequired1.TextColor3 = Color3.fromRGB(255, 0, 0) -- Pure Red
+		else
+			powerRequired1.TextColor3 = Color3.fromRGB(0, 255, 0) -- Pure Green
+		end
+
+		-- Anti-tagging static text enforcement 
+		-- Ensures strings that naturally shouldn't be tagged stay consistent
+		safeSetText(powerRequired, "energy required")
+		safeSetText(textButton4, "TRUE")
+		safeSetText(textButton5, "FALSE")
+		safeSetText(textButton16, "-")
+		safeSetText(textButton17, "<")
+		safeSetText(textButton18, "WARP")
+		safeSetText(textButton19, "ENTER")
+		safeSetText(textButton20, "DEL ALL")
+
+		-- Number pads bypass filter seamlessly with numerical type
+		safeSetText(textButton6, 7)
+		safeSetText(textButton7, 4)
+		safeSetText(textButton8, 1)
+		safeSetText(textButton9, 0)
+		safeSetText(textButton10, 8)
+		safeSetText(textButton11, 5)
+		safeSetText(textButton12, 2)
+		safeSetText(textButton13, 9)
+		safeSetText(textButton14, 6)
+		safeSetText(textButton15, 3)
+
+		task.wait(0.5)
+	end
+end)
+
+local function selectField(index)
+	currentSelection = index
+	newInput = true
+	isNegativePending = false
+	textButton16.TextColor3 = Color3.fromHex("#FFFFFF")
+	updateFieldsUI()
+end
+
+for i, btn in ipairs(coordButtons) do
+	btn.MouseButton1Click:Connect(function()
+		selectField(i)
+	end)
+end
+
+local function appendDigit(digit)
+	local currentText = fields[currentSelection]
+
+	if isNegativePending then
+		currentText = "-" .. digit
+		isNegativePending = false
+		textButton16.TextColor3 = Color3.fromHex("#FFFFFF")
+		newInput = false
+	elseif newInput then
+		currentText = digit
+		newInput = false
+	else
+		if currentText == "0" then
+			currentText = digit
+		elseif currentText == "-0" then
+			currentText = "-" .. digit
+		else
+			currentText = currentText .. digit
+		end
+	end
+
+	local val = tonumber(currentText) or 0
+	local max = (currentSelection <= 2) and 100 or 10
+
+	if val > max then
+		currentText = tostring(max)
+	elseif val < -max then
+		currentText = tostring(-max)
+	end
+
+	fields[currentSelection] = currentText
+	updateFieldsUI()
+	applyHyperDrive() -- Updates HyperDrive immediately upon configuring
+end
+
+local numpad = {
+	[textButton6] = "7", [textButton7] = "4", [textButton8] = "1", [textButton9] = "0",
+	[textButton10] = "8", [textButton11] = "5", [textButton12] = "2",
+	[textButton13] = "9", [textButton14] = "6", [textButton15] = "3"
+}
+
+for btn, digit in pairs(numpad) do
+	btn.MouseButton1Click:Connect(function()
+		appendDigit(digit)
+	end)
+end
+
+-- Minus Button Logic
+textButton16.MouseButton1Click:Connect(function()
+	isNegativePending = not isNegativePending
+	if isNegativePending then
+		textButton16.TextColor3 = Color3.fromHex("#FFFF00")
+	else
+		textButton16.TextColor3 = Color3.fromHex("#FFFFFF")
+	end
+end)
+
+-- Backspace Button Logic
+textButton17.MouseButton1Click:Connect(function()
+	local currentText = fields[currentSelection]
+	if #currentText > 0 then
+		currentText = string.sub(currentText, 1, -2)
+		if currentText == "-" or currentText == "" then
+			currentText = "0"
+			newInput = true
+		else
+			newInput = false -- Appends digit instead of overwriting after a backspace is processed
+		end
+		fields[currentSelection] = currentText
+		updateFieldsUI()
+		applyHyperDrive() -- Updates HyperDrive immediately upon backspacing
+	end
+end)
+
+-- TRUE Button
+textButton4.MouseButton1Click:Connect(function()
+	inPlanet = true
+	updateInPlanetUI()
+	applyHyperDrive() -- Updates HyperDrive immediately upon changing TRUE/FALSE state
+end)
+
+-- FALSE Button
+textButton5.MouseButton1Click:Connect(function()
+	inPlanet = false
+	updateInPlanetUI()
+	applyHyperDrive()
+end)
+
+-- ENTER Button (now primarily acts to advance the selection safely)
+textButton19.MouseButton1Click:Connect(function()
+	applyHyperDrive()
+	selectField((currentSelection % 4) + 1)
+end)
+
+-- DEL ALL Button
+textButton20.MouseButton1Click:Connect(function()
+	fields = {"0", "0", "0", "0"}
+	inPlanet = false
+	updateInPlanetUI()
+	selectField(1)
+	applyHyperDrive()
+end)
+
+-- WARP Button
+textButton18.MouseButton1Click:Connect(function()
+	if HyperDrive then
+		HyperDrive:Trigger()
+	end
+end)
+
+-- Bootup UI states properly (This reads and applies the initially pulled coordinates natively)
+syncFromHyperDrive()
+
+-- Preserve the UI interactions by suspending thread operations permanently
+coroutine.yield()
